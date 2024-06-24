@@ -1,4 +1,6 @@
 // frontend.js
+import { TicTacToeGame } from './game-logic.js';
+
 class TicTacToeUI {
     constructor() {
         this.board = document.getElementById('board');
