@@ -1,5 +1,7 @@
 // frontend.js
+import { CPUPlayer } from './cpu-player.js';
 import { TicTacToeGame } from './game-logic.js';
+
 
 class TicTacToeUI {
     constructor() {

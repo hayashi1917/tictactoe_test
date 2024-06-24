@@ -1,4 +1,3 @@
-// game-logic.js
 class TicTacToeGame {
     constructor() {
         this.currentState = Array(9).fill(0);
@@ -52,3 +51,5 @@ class TicTacToeGame {
         this.currentPlayer = 1;
     }
 }
+
+export { TicTacToeGame };

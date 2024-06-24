@@ -1,4 +1,3 @@
-// cpu-player.js
 class CPUPlayer {
     getBestMove(state) {
         return this.minimax(state, 1).index;
@@ -77,3 +76,5 @@ class CPUPlayer {
         }
     }
 }
+
+export { CPUPlayer };
