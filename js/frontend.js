@@ -8,12 +8,25 @@ class TicTacToeUI {
         this.board = document.getElementById('board');
         this.message = document.getElementById('message');
         this.restartBtn = document.getElementById('restart-btn');
-        this.game = new TicTacToeGame();
-        this.cpuPlayer = new CPUPlayer();
-
-        this.initializeBoard();
-        this.restartBtn.addEventListener('click', () => this.restartGame());
+        this.startBtn = document.getElementById('start-btn');
+        this.playerChoice = document.getElementsByName('player');
+    
+        this.startBtn.addEventListener('click', () => this.startGame());
     }
+    
+    startGame() {
+        let player = Array.from(this.playerChoice).find(radio => radio.checked)?.value || 1;
+        this.game = new TicTacToeGame(parseInt(player));
+        this.cpuPlayer = new CPUPlayer();
+        this.initializeBoard();
+        if (this.game.getCurrentPlayer() === 1) {
+            this.updateMessage("コンピューターの番です。");
+            this.makeCPUMove();
+        } else {
+            this.updateMessage("あなたの番です。");
+        }
+    }
+    
 
     initializeBoard() {
         this.board.innerHTML = '';

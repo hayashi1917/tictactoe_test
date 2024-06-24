@@ -1,7 +1,7 @@
 class TicTacToeGame {
-    constructor() {
+    constructor(player = 1) {  // デフォルトは先行とします
         this.currentState = Array(9).fill(0);
-        this.currentPlayer = 1;  // 1 for X (CPU), -1 for O (Human)
+        this.currentPlayer = player;
     }
 
     makeMove(index) {
